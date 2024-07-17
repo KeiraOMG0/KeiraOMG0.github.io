@@ -1,15 +1,21 @@
 # Welcome to KeiraOMG0's Projects!
 
-Here are some projects you can view:
+Explore various projects developed by KeiraOMG0.
 
-- **Coin Flip Simulation:**
-  This project simulates a coin flip with options for heads or tails. [Explore Coin Flip Simulation](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/coin_flip)
-
-- **Watch Time Calculator:**
-  Coming soon!
-
----
+## Projects
 
 ### Coin Flip Simulation
 
-To view the Coin Flip Simulation project, click [here](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/coin_flip).
+- **Description:** Simulates a coin flip with options for heads or tails.
+- **Source Code:** You can find the source code in the `coin_flip` directory of this repository.
+- **Try It Out!:** [Explore Coin Flip Simulation](https://KeiraOMG0.github.io/coin_flip/index.html)
+
+### Watch Time Calculator
+
+- **Description:** Coming soon!
+
+---
+
+## Coin Flip Simulation
+
+To view the Coin Flip Simulation project, click [here](https://KeiraOMG0.github.io/coin_flip/index.html).
