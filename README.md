@@ -16,6 +16,6 @@ Explore various projects developed by KeiraOMG0.
 
 ---
 
-## Coin Flip Simulation
+## Source code
 
 To view the source code for the Coin Flip Simulation, click [here](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/coin_flip).
