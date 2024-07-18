@@ -12,7 +12,7 @@ Explore various projects developed by KeiraOMG0.
 
 ### Watch Time Calculator
 
-- **Description:** Calculate watch time for videos (Coming soon!).
+- **Description:** Calculate watch time for videos.
 - **Try It Out!:** [Explore Watch Time Calculator](https://KeiraOMG0.github.io/WatchTimeCalculator/index.html)
 - **Source Code:** [Explore Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/WatchTimeCalculator)
 
