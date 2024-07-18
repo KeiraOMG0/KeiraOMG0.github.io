@@ -17,9 +17,3 @@ Explore various projects developed by KeiraOMG0.
 - **Source Code:** [Explore Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/WatchTimeCalculator)
 
 ---
-
-## Source Code
-
-To view the source code for the projects, click on the respective links below:
-- [Coin Flip Simulation Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/coin_flip)
-- [Watch Time Calculator Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/WatchTimeCalculator)
