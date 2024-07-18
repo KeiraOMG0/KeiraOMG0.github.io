@@ -7,11 +7,19 @@ Explore various projects developed by KeiraOMG0.
 ### Coin Flip Simulation
 
 - **Description:** Simulates a coin flip with options for heads or tails.
-- **Source Code:** You can find the source code in the `coin_flip` directory of this repository. [Explore Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/coin_flip)
 - **Try It Out!:** [Explore Coin Flip Simulation](https://KeiraOMG0.github.io/coin_flip/index.html)
+- **Source Code:** [Explore Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/coin_flip)
 
 ### Watch Time Calculator
 
-- **Description:** Coming soon!
+- **Description:** Calculate watch time for videos (Coming soon!).
+- **Try It Out!:** [Explore Watch Time Calculator](https://KeiraOMG0.github.io/WatchTimeCalculator/index.html)
+- **Source Code:** [Explore Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/WatchTimeCalculator)
 
 ---
+
+## Source Code
+
+To view the source code for the projects, click on the respective links below:
+- [Coin Flip Simulation Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/coin_flip)
+- [Watch Time Calculator Source Code](https://github.com/KeiraOMG0/KeiraOMG0.github.io/tree/main/WatchTimeCalculator)
