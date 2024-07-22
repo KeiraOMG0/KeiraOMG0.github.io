@@ -17,6 +17,8 @@ const monster = {
     attack: 12
 };
 
+let monstersKilled = 0;
+
 function updateStats() {
     document.getElementById('player-stats').innerText = `Player Health: ${player.health}`;
     document.getElementById('monster-stats').innerText = `Monster Health: ${monster.health}`;
@@ -24,6 +26,7 @@ function updateStats() {
     document.getElementById('player-exp').innerText = `EXP: ${player.exp}/${player.nextLevelExp}`;
     document.getElementById('player-gold').innerText = `Gold: ${player.gold}`;
     document.getElementById('potions-count').innerText = `Potions: ${player.potions}`;
+    document.getElementById('monster-counter').innerText = `Monsters Killed: ${monstersKilled}`;
 }
 
 function logMessage(message) {
@@ -43,6 +46,7 @@ function levelUp() {
     player.critChance += 0.01;
     player.health = player.maxHealth;
     logMessage(`You leveled up to level ${player.level}! Health and stats have been increased.`);
+    resetMonster();
 }
 
 function gainExp(exp) {
@@ -68,6 +72,7 @@ function attack() {
     if (monster.health <= 0) {
         logMessage('You defeated the monster!');
         player.gold += 10;
+        monstersKilled++;
         gainExp(10);
         resetMonster();
         return;
@@ -148,6 +153,10 @@ function upgradeHealth() {
 }
 
 function resetMonster() {
+    // Increase monster attack by 20% to 60% with each level
+    const attackMultiplier = 1 + (Math.random() * 0.4 + 0.2); // Random between 20% and 60%
+    monster.attack = Math.floor(monster.attack * attackMultiplier);
+    
     monster.maxHealth += player.level * 20;
     monster.health = monster.maxHealth;
     player.health = player.maxHealth;
@@ -156,32 +165,46 @@ function resetMonster() {
 }
 
 function revive() {
-    player.health = 30;
-    logMessage('You revived with 30 health!');
-    document.getElementById('attack').disabled = false;
-    document.getElementById('heal').disabled = false;
-    document.getElementById('revive').style.display = 'none';
-    updateStats();
+    if (player.gold >= 20) {
+        player.gold -= 20;
+        player.health = player.maxHealth;
+        document.getElementById('attack').disabled = false;
+        document.getElementById('heal').disabled = false;
+        document.getElementById('revive').style.display = 'none';
+        logMessage('You have been revived!');
+        updateStats();
+    } else {
+        logMessage('Not enough gold to revive.');
+    }
 }
 
 function processCheatCode(code) {
     const [command, value] = code.split('=');
-    const numericValue = parseInt(value);
-    
-    if (command === 'health') {
-        player.health = numericValue;
-        player.maxHealth = numericValue;
-        logMessage(`Cheat activated: Health set to ${numericValue}`);
-    } else if (command === 'attack') {
-        player.attack = numericValue;
-        logMessage(`Cheat activated: Attack set to ${numericValue}`);
-    } else if (command === 'gold') {
-        player.gold = numericValue;
-        logMessage(`Cheat activated: Gold set to ${numericValue}`);
-    } else {
-        logMessage('Invalid cheat code.');
+    switch (command) {
+        case 'level':
+            player.level = parseInt(value);
+            player.exp = 0;
+            player.nextLevelExp = 20 * Math.pow(2, player.level - 1);
+            player.maxHealth = 100 + (player.level - 1) * 20;
+            player.attack = 10 + (player.level - 1) * 2;
+            player.health = player.maxHealth;
+            logMessage(`Level set to ${player.level}. Stats updated.`);
+            resetMonster();
+            updateStats();
+            break;
+        case 'health':
+            cheat.health(parseInt(value));
+            break;
+        case 'attack':
+            cheat.attack(parseInt(value));
+            break;
+        case 'gold':
+            cheat.gold(parseInt(value));
+            break;
+        default:
+            logMessage('Unknown cheat code.');
+            break;
     }
-    updateStats();
 }
 
 document.getElementById('attack').addEventListener('click', attack);
@@ -192,14 +215,9 @@ document.getElementById('upgrade-health').addEventListener('click', upgradeHealt
 document.getElementById('revive').addEventListener('click', revive);
 
 document.getElementById('cheat-code-button').addEventListener('click', () => {
-    const code = prompt('Enter cheat code (e.g., health=500, attack=50, gold=1000):');
-    if (code) {
-        processCheatCode(code);
-    }
+    const cheatCode = prompt('Enter cheat code:');
+    processCheatCode(cheatCode);
 });
-
-updateStats();
-logMessage('A wild monster appears!');
 
 // Expose cheat object to the global scope
 const cheat = {
