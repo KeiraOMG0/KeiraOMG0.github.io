@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple RPG Game</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #monster-image {
+            max-width: 200px;
+            display: block;
+            margin: 10px 0;
+        }
+        #log {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 <body>
     <div id="game-container">
@@ -15,6 +55,8 @@
         <div id="player-exp">EXP: 0/20</div>
         <div id="player-gold">Gold: 0</div>
         <div id="potions-count">Potions: 0</div>
+        <img id="monster-image" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png" alt="Monster">
+        <div id="monster-counter">Monsters Killed: 0</div>
         <button id="attack">Attack</button>
         <button id="heal">Heal</button>
         <button id="buy-potion">Buy Potion</button>
@@ -22,7 +64,7 @@
         <button id="upgrade-health">Upgrade Health</button>
         <button id="revive" style="display: none;">Revive</button>
         <button id="cheat-code-button">Enter Cheat Code</button>
-        <div id="log" style="height: 200px; overflow-y: auto; border: 1px solid #ccc; margin-top: 20px; padding: 10px;"></div>
+        <div id="log"></div>
     </div>
     <script src="script.js"></script>
 </body>
